@@ -1,0 +1,65 @@
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+@page "/bar"
+
+@using BlazorFluxor.Store.State
+@using BlazorFluxor.Services
+
+@inject IState<BarState> BarState
+@inject StateFacade Facade
+
+<h3 class="text-center mb-3">Bar</h3>
+
+@if (BarState.Value.IsLoading)
+{
+    <div class="d-flex flex-row justify-content-center">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+}
+else if (BarState.Value.HasCurrentErrors)
+{
+    <span>Opps! Looks like an issue occurred loading bars :(</span>
+}
+else if (!(BarState.Value.Bars is null) && BarState.Value.Bars.Any())
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Completed</th>
+                <th>IPAddress</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bar in BarState.Value.Bars.Take(100))
+            {
+                <tr>
+                    <td>@bar.FirstName</td>
+                    <td>@bar.LastName</td>
+                    <td>@bar.Email</td>
+                    <td>@bar.Completed</td>
+                    <td>@bar.IPAddress</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    protected override void OnInitialized()
+    {
+        if (BarState.Value.Bars is null)
+        {
+            Facade.LoadBar();
+        }
+
+
+        base.OnInitialized();
+    }
+
+}
