@@ -19,7 +19,7 @@ namespace BlazorFluxor.Store.Effects
         public FooEffect(ILogger<FooEffect> logger, HttpClient httpClient) =>
             (_logger, _httpClient) = (logger, httpClient);
 
-        protected override async Task HandleAsync(LoadFooAction action, IDispatcher dispatcher)
+        public override async Task HandleAsync(LoadFooAction action, IDispatcher dispatcher)
         {
             try
             {

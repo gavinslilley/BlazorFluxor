@@ -19,7 +19,7 @@ namespace BlazorFluxor.Store.Effects
         public BarEffect(ILogger<BarEffect> logger, HttpClient httpClient) =>
             (_logger, _httpClient) = (logger, httpClient);
 
-        protected override async Task HandleAsync(LoadBarAction action, IDispatcher dispatcher)
+        public override async Task HandleAsync(LoadBarAction action, IDispatcher dispatcher)
         {
             try
             {
