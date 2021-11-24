@@ -1,6 +1,6 @@
 using Fluxor;
 using BlazorFluxor.Web.Store.Actions.FooActions;
-using BlazorFluxor.Web.Store.State;
+using BlazorFluxor.Store.State;
 
 namespace BlazorFluxor.Web.Store.Reducers
 {

@@ -1,7 +1,7 @@
 using BlazorFluxor.Models;
 using System.Collections.Generic;
 
-namespace BlazorFluxor.Web.Store.State
+namespace BlazorFluxor.Store.State
 {
     public class FooState : RootState
     {

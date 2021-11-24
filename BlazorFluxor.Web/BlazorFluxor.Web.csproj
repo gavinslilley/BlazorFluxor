@@ -7,7 +7,9 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'BlazorFluxor.Web' ">
     <ExternalConsole>true</ExternalConsole>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'BlazorFluxor' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'BlazorFluxor' ">
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Fluxor.Blazor.Web" Version="4.2.1" />
     <PackageReference Include="Fluxor.Blazor.Web.ReduxDevTools" Version="4.2.1" />
@@ -18,6 +20,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BlazorFluxor.Models\BlazorFluxor.Models.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\BlazorFluxor.Store\BlazorFluxor.Store.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>

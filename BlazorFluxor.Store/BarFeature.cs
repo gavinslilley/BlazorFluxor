@@ -1,5 +1,5 @@
 using Fluxor;
-using BlazorFluxor.Web.Store.State;
+using BlazorFluxor.Store.State;
 
 namespace BlazorFluxor.Web.Store
 {

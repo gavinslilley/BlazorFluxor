@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Fluxor.Blazor.Web" Version="4.2.1" />
+    <PackageReference Include="Fluxor.Blazor.Web.ReduxDevTools" Version="4.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorFluxor.Models\BlazorFluxor.Models.csproj" />
+  </ItemGroup>
 </Project>

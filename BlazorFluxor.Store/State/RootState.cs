@@ -1,4 +1,4 @@
-namespace BlazorFluxor.Web.Store.State
+namespace BlazorFluxor.Store.State
 {
     public abstract class RootState
     {
