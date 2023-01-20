@@ -1,12 +1,5 @@
-@inherits Fluxor.Blazor.Web.Components.FluxorComponent
-
 @page "/foo"
-
-@using BlazorFluxor.Store.State
-@using BlazorFluxor.Web.Services
-
-@inject IState<FooState> FooState
-@inject StateFacade Facade
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
 
 <h3 class="text-center mb-3">Foo</h3>
 
@@ -48,18 +41,4 @@ else if (!(FooState.Value.Foos is null) && FooState.Value.Foos.Any())
             }
         </tbody>
     </table>
-}
-
-@code {
-    protected override void OnInitialized()
-    {
-        if (FooState.Value.Foos is null)
-        {
-            Facade.LoadFoo();
-        }
-
-
-        base.OnInitialized();
-    }
-
 }

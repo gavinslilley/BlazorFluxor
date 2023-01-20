@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BlazorFluxor.Web.Store.Effects
 {
-    public class FooEffect : Effect<LoadFooAction>
+    public class FooEffect
     {
         private readonly ILogger<FooEffect> _logger;
         private readonly HttpClient _httpClient;
@@ -19,7 +19,8 @@ namespace BlazorFluxor.Web.Store.Effects
         public FooEffect(ILogger<FooEffect> logger, HttpClient httpClient) =>
             (_logger, _httpClient) = (logger, httpClient);
 
-        public override async Task HandleAsync(LoadFooAction action, IDispatcher dispatcher)
+        [EffectMethod]
+        public async Task HandleAsync(LoadFooAction action, IDispatcher dispatcher)
         {
             try
             {

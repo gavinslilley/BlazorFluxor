@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BlazorFluxor.Web.Store.Effects
 {
-    public class BarEffect : Effect<LoadBarAction>
+    public class BarEffect 
     {
         private readonly ILogger<BarEffect> _logger;
         private readonly HttpClient _httpClient;
@@ -19,7 +19,8 @@ namespace BlazorFluxor.Web.Store.Effects
         public BarEffect(ILogger<BarEffect> logger, HttpClient httpClient) =>
             (_logger, _httpClient) = (logger, httpClient);
 
-        public override async Task HandleAsync(LoadBarAction action, IDispatcher dispatcher)
+        [EffectMethod]
+        public async Task HandleAsync(LoadBarAction action, IDispatcher dispatcher)
         {
             try
             {
