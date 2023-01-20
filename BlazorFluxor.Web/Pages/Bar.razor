@@ -1,12 +1,5 @@
-@inherits Fluxor.Blazor.Web.Components.FluxorComponent
-
 @page "/bar"
-
-@using BlazorFluxor.Store.State
-@using BlazorFluxor.Web.Services
-
-@inject IState<BarState> BarState
-@inject StateFacade Facade
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
 
 <h3 class="text-center mb-3">Bar</h3>
 
@@ -48,18 +41,4 @@ else if (!(BarState.Value.Bars is null) && BarState.Value.Bars.Any())
             }
         </tbody>
     </table>
-}
-
-@code {
-    protected override void OnInitialized()
-    {
-        if (BarState.Value.Bars is null)
-        {
-            Facade.LoadBar();
-        }
-
-
-        base.OnInitialized();
-    }
-
 }
