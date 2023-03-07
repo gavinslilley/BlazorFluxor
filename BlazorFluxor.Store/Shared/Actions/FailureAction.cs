@@ -1,11 +1,9 @@
 
-namespace BlazorFluxor.Web.Store.Shared.Actions
+namespace BlazorFluxor.Web.Store.Shared.Actions;
+public abstract class FailureAction
 {
-    public abstract class FailureAction
-    {
-        protected FailureAction(string errorMessage) =>
-            ErrorMessage = errorMessage;
+    protected FailureAction(string errorMessage) =>
+        ErrorMessage = errorMessage;
 
-        public string ErrorMessage { get; }
-    }
+    public string ErrorMessage { get; }
 }

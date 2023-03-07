@@ -9,8 +9,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 
-namespace BlazorFluxor.Web.Store.Effects
-{
+namespace BlazorFluxor.Web.Store.Effects;
     public class BarEffect 
     {
         private readonly ILogger<BarEffect> _logger;
@@ -41,4 +40,3 @@ namespace BlazorFluxor.Web.Store.Effects
 
         }
     }
-}
