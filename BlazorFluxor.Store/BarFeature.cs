@@ -1,8 +1,7 @@
 using Fluxor;
 using BlazorFluxor.Store.State;
 
-namespace BlazorFluxor.Web.Store
-{
+namespace BlazorFluxor.Web.Store;
     public class BarFeature : Feature<BarState>
     {
         public override string GetName() => "Bars";
@@ -10,4 +9,3 @@ namespace BlazorFluxor.Web.Store
         protected override BarState GetInitialState() =>
             new BarState(false, null, null);
     }
-}
